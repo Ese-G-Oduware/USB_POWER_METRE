@@ -91,7 +91,7 @@ Because the INA219 calculates current and power internally in hardware, Register
 Both peripherals share **I2C1 (`PC1` = SDA, `PC2` = SCL)** configured in **400 kHz Fast Mode** (`I2C_DutyCycle_16_9`).
 
 ### 1. INA219 16-Bit Register Read Sequence
-The INA219 stores measurements in 16-bit big-endian registers (MSB first). Reading a register requires a **Write-Pointer + Repeated-Start** transaction with strict hardware ACK/STOP timing on the CH32V003:
+The INA219 stores measurements in 16-bit registers (MSB first). Reading a register requires a **Write-Pointer + Repeated-Start** transaction with strict hardware ACK/STOP timing on the CH32V003:
 
 ```text
 [START] -> [0x40 + W] -> [Reg Pointer] -> [REPEATED START] -> [0x40 + R] -> [MSB] -> (Disable ACK + Queue STOP) -> [LSB] -> [STOP]
