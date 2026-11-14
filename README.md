@@ -1,5 +1,3 @@
-# USB_POWER_METRE
-A device to measure the current, voltage, and power flowing through a USB-C connection into a phone/laptop, for example.
 # USB-C Power Meter (CH32V003 + INA219 + SSD1306)
 
 A custom USB-C power meter engineered around the **WCH CH32V003** 32-bit RISC-V microcontroller. Placed inline between a USB-C power adapter and a downstream device (such as a smartphone, tablet, or laptop), it continuously monitors real time bus voltage ($V$), load current ($I$), and power consumption ($W$), rendering live electrical metrics and an oscilloscope-style rolling power graph onto a 0.96" OLED display.
