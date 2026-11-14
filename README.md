@@ -49,8 +49,7 @@ Main Resources used to learn: https://ohdarling88.medium.com/diy-usb-current-met
 * **Configuration Channel (CC1 / CC2) Signaling:** Two **$5.1\,\text{k}\Omega$ pull-down resistors** connect `CC1` and `CC2` to `GND` on the input side (`J1`), while `CC1` and `CC2` pass straight through from `J1` to `J2`. The $5.1\,\text{k}\Omega$ pull-downs identify the meter as a valid USB-C sink so smart chargers enable `5V VBUS` regardless of cable orientation, while the pass-through lines preserve downstream device communication.
 
 ### 2. Step-Down Power Supply (`LGS5145`)
-To power the CH32V003, INA219, and SSD1306 safely from the USB `VBUS` line, an **LGS5145** buck converter steps the input down to a regulated **$3.3\,\text{V}$ rail** using a $10\,\mu\mathrm{H}\text{–}22\,\mu\mathrm{H}$
- power inductor, an `SS14` Schottky catch diode, and $10\,\mu\text{F}$ input/output ceramic capacitors.
+To power the CH32V003, INA219, and SSD1306 safely from the USB `VBUS` line, an **LGS5145** buck converter steps the input down to a regulated **$3.3\,\text{V}$ rail** using a $10\\mu\mathrm{H}\text{–}22\\mu\mathrm{H}$ power inductor, an `SS14` Schottky catch diode, and $10\,\mu\text{F}$ input/output ceramic capacitors.
 
 ### Schematic Diagram
 ![USB-C Power Meter Schematic](USBPOwerMetreSchematicKiCad.png)
