@@ -2,7 +2,7 @@
 
 A custom USB-C power meter engineered around the **WCH CH32V003** 32-bit RISC-V microcontroller. Placed inline between a USB-C power adapter and a downstream device (such as a smartphone, tablet, or laptop), it continuously monitors real time bus voltage ($V$), load current ($I$), and power consumption ($W$), rendering live electrical metrics and an oscilloscope-style rolling power graph onto a 0.96" OLED display.
 
-Main Resourcesused to learn: https://ohdarling88.medium.com/diy-usb-current-meter-1-component-selection-and-schematic-design-95a2203fb45d
+Main Resources used to learn: https://ohdarling88.medium.com/diy-usb-current-meter-1-component-selection-and-schematic-design-95a2203fb45d
  and https://www.youtube.com/watch?v=AaFnhHrfWs4&t=2256s
 
 ---
