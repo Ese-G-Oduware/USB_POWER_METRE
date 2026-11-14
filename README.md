@@ -49,7 +49,6 @@ A custom USB-C power meter engineered around the **WCH CH32V003** 32-bit RISC-V 
 To power the CH32V003, INA219, and SSD1306 safely from the USB `VBUS` line, an **LGS5145** buck converter steps the input down to a regulated **$3.3\,\text{V}$ rail** using a $10\,\mu\text{H}$–$22\,\mu\text{H}$ power inductor, an `SS14` Schottky catch diode, and $10\,\mu\text{F}$ input/output ceramic capacitors.
 
 ### Schematic Diagram
-*(Replace the path below with your exported KiCad schematic PNG/SVG)*
 ![USB-C Power Meter Schematic](USBPOwerMetreSchematicKiCad.png)
 
 ---
