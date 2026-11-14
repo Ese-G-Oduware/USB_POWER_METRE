@@ -38,7 +38,7 @@ A custom USB-C power meter engineered around the **WCH CH32V003** 32-bit RISC-V 
 | **Current / Power Sensor** | TI INA219 | I2C1 (`0x40`) | `PC1` (SDA), `PC2` (SCL) | `A0` & `A1` tied to `GND` |
 | **OLED Display** | SSD1306 (HS96L03W2C03 128x64) | I2C1 (`0x3C`) | `PC1` (SDA), `PC2` (SCL) | Shared 400 kHz Fast-Mode I2C bus |
 | **Step-Down Regulator** | LGS5145 Buck Converter | Analog Feedback | — | Steps `VBUS` down to $3.32\,\text{V}$ |
-| **User Input** | Tactile Push Button | GPIO Input (`IPU`) | `PD2` | Active-low with 250 ms debounce |
+| **User Input** | Tactile Push Buttons | GPIO Input (`IPU`) | `PD2 & PD3` | Active-low with 250 ms debounce |
 | **Debug UART** | CH340 / WCH-LinkE | USART1 (115200 baud) | `PD5` (TX), `PD6` (RX) | Serial diagnostics |
 
 ---
