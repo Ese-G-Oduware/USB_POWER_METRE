@@ -71,14 +71,14 @@ $$V_{\text{OUT}} = 0.812\,\text{V} \times \left(1 + \frac{30.9\,\text{k}\Omega}{
 
 ---
 
-### 2. INA219 Calibration Register (`0x05`) & Current LSB
-Because the INA219 calculates current and power internally in hardware, Register `0x05` must be programmed at startup with a scaling factor derived from the shunt resistance ($R_{\text{SHUNT}} = 0.01\,\Omega$) and maximum expected current ($I_{\text{MAX}} = 3.2\,\text{A}$):
+Because the INA219 calculates current and power internally in hardware, Register 0x05 must be programmed at startup with a scaling factor derived from the shunt resistance ($R_{\text{SHUNT}} = 0.01\,\Omega$) and maximum expected current ($I_{\text{MAX}} = 3.2\,\text{A}$):
 
-1. **Current Resolution (`Current_LSB`):**
-   $$\text{Current\_LSB} = \frac{I_{\text{MAX}}}{2^{15}} = \frac{3.2\,\text{A}}{32768} \approx 0.00009765625\,\text{A/bit}$$
+Current Resolution ($\text{Current\_LSB}$):
+$$\text{Current\_LSB} = \frac{I_{\text{MAX}}}{2^{15}} = \frac{3.2\,\text{A}}{32768} \approx 0.00009765625\,\text{A/bit}$$
 
-2. **Calibration Register Value:**
-   $$\text{Cal} = \text{trunc}\left(\frac{0.04096}{\text{Current\_LSB} \times R_{\text{SHUNT}}}\right) = \text{trunc}\left(\frac{0.04096}{0.00009765625 \times 0.01}\right) = 41943 \quad (\text{0xA3D7})$$
+Calibration Register Value:
+$$\text{Cal} = \text{trunc}\left(\frac{0.04096}{\text{Current\_LSB} \times R_{\text{SHUNT}}}\right) = \text{trunc}\left(\frac{0.04096}{0.00009765625 \times 0.01}\right) = 41943 \quad (\text{0xA3D7})$$
+
 
 ---
 
