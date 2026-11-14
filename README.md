@@ -75,16 +75,16 @@ $$V_{\text{OUT}} = 0.812\,\text{V} \times \left(1 + \frac{30.9\,\text{k}\Omega}{
 Because the INA219 calculates current and power internally in hardware, Register `0x05` must be programmed at startup with a scaling factor derived from the shunt resistance ($R_{\text{SHUNT}} = 0.01\,\Omega$) and maximum expected current ($I_{\text{MAX}} = 3.2\,\text{A}$):
 
 1. **Current Resolution (`Current_LSB`):**
-   $$\text{Current\_LSB} = \frac{I_{\text{MAX}}}{2^{15}} = \frac{3.2\,\text{A}}{32768} \approx 0.00009765625\,\text{A/bit}$$
+   $$\text{Current\LSB} = \frac{I_{\text{MAX}}}{2^{15}} = \frac{3.2\,\text{A}}{32768} \approx 0.00009765625\,\text{A/bit}$$
 
 2. **Calibration Register Value:**
-   $$\text{Cal} = \text{trunc}\left(\frac{0.04096}{\text{Current\_LSB} \times R_{\text{SHUNT}}}\right) = \text{trunc}\left(\frac{0.04096}{0.00009765625 \times 0.01}\right) = 41943 \quad (\text{0xA3D7})$$
+   $$\text{Cal} = \text{trunc}\left(\frac{0.04096}{\text{Current\LSB} \times R_{\text{SHUNT}}}\right) = \text{trunc}\left(\frac{0.04096}{0.00009765625 \times 0.01}\right) = 41943 \quad (\text{0xA3D7})$$
 ---
 
 ### 3. Bus Voltage, Current, and Power Conversions
 * **Bus Voltage (`Register 0x02`):** The lower 3 bits (`[2:0]`) are status flags (`CNVR` and `OVF`). Shifting right by 3 isolates the 13-bit voltage reading, where each LSB equals $4\,\text{mV}$:
   $$V_{\text{BUS}} = \frac{(\text{rawBusVolt} \gg 3) \times 4.0}{1000.0}$$
-* **Load Current (`Register 0x04`):** Read as a signed 16-bit integer (`int16_t`) and multiplied directly by $\text{Current\_LSB}$:
+* **Load Current (`Register 0x04`):** Read as a signed 16-bit integer (`int16_t`) and multiplied directly by $\text{Current\LSB}$:
   $$I_{\text{LOAD}} = \text{rawCurrent} \times 0.00009765625$$
 * **Instantaneous Power:**
   $$P = V_{\text{BUS}} \times I_{\text{LOAD}}$$
